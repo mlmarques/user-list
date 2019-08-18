@@ -1,0 +1,44 @@
+.app-header{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.app-title{
+    background-color: white;
+    color: black;
+    margin: 0;
+    font-size: 2.5em;
+    border-bottom: 4px solid #d9d9d9;
+}
+
+.logo{
+    padding: 0 1%;
+}
+
+.nav-bar{
+    width: 100%;
+    background-color: white;
+}
+
+.nav-bar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: .5% 1%;
+    overflow: hidden;    
+}
+
+.nav-bar li{
+    display: inline;
+    float: left;
+}
+
+.nav-bar li a{
+    display: block;
+    text-align: center;
+    padding: .25em 1em;
+    font-size: 1.25em;
+}
+
+.nav-bar li a:hover{
+    font-weight: bold;
+}
