@@ -1,0 +1,45 @@
+.form-body{
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.form-body h2{
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 2%; 
+}
+
+.user-form{
+    
+    width: 50%;
+    padding: .5% 1%;
+}
+
+.user-label{
+    padding: 0 1%;
+    font-weight: bold;
+}
+
+.user-input{
+    border: 1px solid red;
+    width: 100%;
+    padding: .5% 1%;
+    margin: .5% 1%;
+    border: 1px solid gray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-user-confirm{
+    border: 1px solid red;
+    width: 100%;
+    margin: 1% 1%;
+    padding: .25em 1.5em;
+    border-radius: 2px;
+    border: none;
+    background-color: transparent; 
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    background-color: #00ff99;    
+}
