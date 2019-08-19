@@ -5,6 +5,7 @@ import { TableComponent } from './table/table.component';
 import { UserService } from './user/user.service';
 import { FormComponent } from './form/form.component';
 import { routing } from '../app.routing';
+import { LocalStorageService } from '../local-storage.service';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { routing } from '../app.routing';
     imports: [
         BrowserModule,
         routing
-    ]
+    ],
+    providers: []
 })
 export class ListModule{}

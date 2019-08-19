@@ -5,8 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StorageServiceModule } from 'ngx-webstorage-service';
 import { ListModule } from './list/list.module';
 import { routing } from './app.routing';
+import { LocalStorageService } from './local-storage.service';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,11 @@ import { routing } from './app.routing';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    StorageServiceModule,
     ListModule,
     routing
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
