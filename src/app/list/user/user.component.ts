@@ -17,10 +17,12 @@ export class UserComponent implements OnInit {
       .listUsers()
       .subscribe(users => {
         this.users = users;
+        this.localStorageService.uploadAPI(this.users);
       });
       
-      this.localStorageService.uploadAPI(this.users);
+      
       console.log(this.localStorageService.verifyLocalStorageUse());
+      this.localStorageService.getAPI();
   }
 
   ngOnInit(): void {}

@@ -1,5 +1,5 @@
 import { Inject, Injectable, Input } from '@angular/core';
-import { LOCAL_STORAGE, StorageService, SESSION_STORAGE } from 'ngx-webstorage-service';
+import { LOCAL_STORAGE, StorageService, SESSION_STORAGE, StorageTranscoders } from 'ngx-webstorage-service';
 import { User } from './list/user/User';
 
 //Chave para acessar os dados no local storage
@@ -9,8 +9,12 @@ const STORAGE_KEY = 'local_userlist';
 export class LocalStorageService{
     users: User[] = [];
 
+    private userStorage: StorageService<any>;
+
     //Injetando dependencia do local storage e referencia a storage utilizada
-    constructor(@Inject(LOCAL_STORAGE) private storage: StorageService){}
+    constructor(@Inject(LOCAL_STORAGE) private storage: StorageService){
+        this.userStorage = storage.withDefaultTranscoder(StorageTranscoders.JSON);
+    }
     
     //Verificar se a local storage está sendo utilizada
     public verifyLocalStorageUse(){
@@ -18,20 +22,31 @@ export class LocalStorageService{
     }
 
     //Gravar API na local storage
-    public uploadAPI(users: User[]) : void{
+    public uploadAPI(users: any[]) : void{
         console.log(users);
         
-        const currentUsers: User[] = this.storage.get(STORAGE_KEY) || [];
+        const currentUsers: any[] = this.storage.get(STORAGE_KEY) || [];
+        
+        users.forEach(user => {
+            currentUsers.push({
+                id: user.id,
+                name: user.name,
+                username: user.username,
+                email: user.email,
+                phone: user.phone,
+                website: user.website
+            })
+            console.log(user);
+            console.log(currentUsers);            
+        });
+        
+        this.storage.set(STORAGE_KEY, users);
+    }
 
-        currentUsers.push({
-            id: 11,
-            name: 'matheus',
-            username: 'mmarques',
-            email: 'mmarques@gmail.com',
-            phone: '139987654321',
-            website: 'mmarques.com.br'
-        });        
-        this.storage.set(STORAGE_KEY, currentUsers);
+    //Recuperar dados armazenados na local storage
+    public getAPI(){
+        console.log(this.storage.get(STORAGE_KEY))
+        return this.storage.get(STORAGE_KEY);
     }
     
 }
