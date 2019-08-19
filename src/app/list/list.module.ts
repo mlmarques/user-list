@@ -4,6 +4,7 @@ import { UserComponent } from './user/user.component';
 import { TableComponent } from './table/table.component';
 import { UserService } from './user/user.service';
 import { FormComponent } from './form/form.component';
+import { routing } from '../app.routing';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { FormComponent } from './form/form.component';
         FormComponent
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        routing
     ]
 })
 export class ListModule{}
