@@ -18,8 +18,8 @@ export class LocalStorageService{
     }
 
     //Gravar API na local storage
-    public uploadAPI(users: any[]) : void{
-        const currentUsers: any[] = this.storage.get(STORAGE_KEY) || [];
+    public uploadAPI(users: User[]) : void{
+        const currentUsers: User[] = this.storage.get(STORAGE_KEY) || [];
         
         users.forEach(user => {
             currentUsers.push({
@@ -37,8 +37,15 @@ export class LocalStorageService{
 
     //Recuperar dados armazenados na local storage
     public getAPI(){
-        console.log(this.storage.get(STORAGE_KEY))
         return this.storage.get(STORAGE_KEY);
+    }
+
+    //Excluir dados na local storage
+    public removeFromLocalStorage(users: User[]){
+        //Limpa a local storage
+        this.storage.clear();
+        //Adiciona o array atualizado
+        this.uploadAPI(users);
     }
     
 }

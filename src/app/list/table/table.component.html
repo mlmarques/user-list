@@ -21,7 +21,7 @@
             <td class="table-data">{{user.website}}</td>
             <td><button class="button btn-details">Detalhes</button></td>  
             <td><button class="button btn-edit">Editar</button></td>  
-            <td><button class="button btn-delete">Excluir</button></td>          
+            <td><button (click)="delete(user)" class="button btn-delete">Excluir</button></td>          
         </tr>
     </tbody>
 </table>
