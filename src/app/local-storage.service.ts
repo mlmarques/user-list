@@ -7,14 +7,10 @@ const STORAGE_KEY = 'local_userlist';
 
 @Injectable()
 export class LocalStorageService{
-    users: User[] = [];
-
     private userStorage: StorageService<any>;
 
     //Injetando dependencia do local storage e referencia a storage utilizada
-    constructor(@Inject(LOCAL_STORAGE) private storage: StorageService){
-        this.userStorage = storage.withDefaultTranscoder(StorageTranscoders.JSON);
-    }
+    constructor(@Inject(LOCAL_STORAGE) private storage: StorageService){}
     
     //Verificar se a local storage está sendo utilizada
     public verifyLocalStorageUse(){
@@ -23,8 +19,6 @@ export class LocalStorageService{
 
     //Gravar API na local storage
     public uploadAPI(users: any[]) : void{
-        console.log(users);
-        
         const currentUsers: any[] = this.storage.get(STORAGE_KEY) || [];
         
         users.forEach(user => {
@@ -35,9 +29,7 @@ export class LocalStorageService{
                 email: user.email,
                 phone: user.phone,
                 website: user.website
-            })
-            console.log(user);
-            console.log(currentUsers);            
+            })    
         });
         
         this.storage.set(STORAGE_KEY, users);

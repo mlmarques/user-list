@@ -13,18 +13,17 @@ export class UserComponent implements OnInit {
   users: User[] = [];
   
   constructor(userService: UserService, private localStorageService: LocalStorageService) {
-    userService
-      .listUsers()
-      .subscribe(users => {
-        this.users = users;
-        this.localStorageService.uploadAPI(this.users);
+    //Verifica se há dados na local storage
+    if(!this.localStorageService.getAPI()){
+      //Se não, carrega a API com os dados do usuário
+      userService
+        .listUsers()
+        .subscribe(users => {
+          this.users = users;
+          this.localStorageService.uploadAPI(this.users);
       });
-      
-      
-      console.log(this.localStorageService.verifyLocalStorageUse());
-      this.localStorageService.getAPI();
+    }
   }
 
   ngOnInit(): void {}
-
 }
