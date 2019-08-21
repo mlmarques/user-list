@@ -3,11 +3,12 @@ import { ModuleWithProviders } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TableComponent } from './list/table/table.component';
 import { FormComponent } from './list/form/form.component';
+import { UserComponent } from './list/user/user.component';
 
 const APP_ROUTES: Routes = [
     {
         path: '',
-        component: AppComponent
+        component: UserComponent
     },
     {
         path: 'table',

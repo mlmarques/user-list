@@ -3,6 +3,8 @@ import { User } from '../user/User';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { UserService } from '../user/user.service';
 import { LocalStorageService } from 'src/app/local-storage.service';
+import { Router } from '@angular/router';
+import { routing } from 'src/app/app.routing';
 
 @Component({
   selector: 'app-table',
@@ -15,7 +17,9 @@ export class TableComponent implements OnInit {
   
   STORAGE_KEY = 'local_userlist';
   
-  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, private localStorageService: LocalStorageService) {}
+  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, 
+    private localStorageService: LocalStorageService,
+    private router: Router) {}
 
   ngOnInit() {}
 
@@ -28,17 +32,13 @@ export class TableComponent implements OnInit {
     this.localStorageService.updateLocalStorage(this.users);   
   }
 
-  public edit(user: User){
-    //Dados para edição
-    user.name = "Matheus Marques";
-    user.username = "mlmarques";
-    user.email = "matheus.marques@gmail.com";
-    user.phone = "(13) 98765-4321";
-    user.website = "mmarques.com.br";
-    //Atualizar array de usuários
+  public edit(){
+    /*//Atualizar array de usuários
     let index: number = this.users.indexOf(user);
     this.users[index] = user;
-    this.localStorageService.updateLocalStorage(this.users);
+    this.localStorageService.updateLocalStorage(this.users);*/
+    console.log("edit");
+    this.router.navigate(['/form']);
   }
 
 }
