@@ -41,11 +41,10 @@ export class LocalStorageService{
     }
 
     //Excluir dados na local storage
-    public removeFromLocalStorage(users: User[]){
+    public updateLocalStorage(users: User[]){
         //Limpa a local storage
         this.storage.clear();
         //Adiciona o array atualizado
         this.uploadAPI(users);
     }
-    
 }

@@ -1,16 +1,31 @@
 <div class="form-body">
-    <form class="user-form">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm" class="user-form">
         <h2>Usuário</h2>
-        <label class="user-label">Nome</label>
-        <input type="text" name="name" class="user-input"/>
-        <label class="user-label">Nome de usuário</label>
-        <input type="text" name="username" class="user-input"/>
-        <label class="user-label">E-mail</label>
-        <input type="text" name="email" class="user-input"/>
-        <label class="user-label">Telefone</label>
-        <input type="text" name="phone" class="user-input"/>
-        <label class="user-label">Site</label>
-        <input type="text" name="website" class="user-input"/>
-        <button type="submit" class="btn-user-confirm">Confirmar</button>
+        <label class="user-label" for="name">Nome</label>
+        <input type="text" class="user-input" id="name" 
+            required
+            [(ngModel)]="name" name="name"
+         />
+        <label class="user-label" for="username">Nome de usuário</label>
+        <input type="text" class="user-input" id="username"
+            required
+            [(ngModel)]="username" name="username" 
+        />
+        <label class="user-label" for="email">E-mail</label>
+        <input type="text" class="user-input" id="email"
+            required
+            [(ngModel)]="email" name="email" 
+        />
+        <label class="user-label" for="phone">Telefone</label>
+        <input type="text" class="user-input" id="phone"
+            required
+            [(ngModel)]="phone" name="phone" 
+        />
+        <label class="user-label" for="website">Site</label>
+        <input type="text" class="user-input" id="website"
+            required
+            [(ngModel)]="website" name="website" 
+        />
+        <button type="submit" class="btn-user-confirm" [disabled]="!userForm.form.valid">Confirmar</button>
     </form>
 </div>

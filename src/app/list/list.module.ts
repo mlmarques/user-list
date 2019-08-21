@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
 import { UserComponent } from './user/user.component';
 import { TableComponent } from './table/table.component';
 import { UserService } from './user/user.service';
@@ -20,6 +21,7 @@ import { LocalStorageService } from '../local-storage.service';
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         routing
     ],
     providers: []
