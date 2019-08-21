@@ -1,6 +1,6 @@
 .form-body{
     width: 100%;
-    background-color: #f2f2f2;
+    background-color: white;
 }
 
 .form-body h2{
@@ -13,15 +13,15 @@
     
     width: 50%;
     padding: .5% 1%;
+    margin: 0 auto;
 }
 
 .user-label{
-    padding: 0 1%;
+    padding: 0 2%;
     font-weight: bold;
 }
 
 .user-input{
-    border: 1px solid red;
     width: 100%;
     padding: .5% 1%;
     margin: .5% 1%;

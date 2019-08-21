@@ -21,7 +21,9 @@ export class TableComponent implements OnInit {
     private localStorageService: LocalStorageService,
     private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.users = this.localStorageService.getAPI();
+  }
 
   public delete(user: User){
     //Pega o index do usuário a ser deletado
@@ -32,13 +34,6 @@ export class TableComponent implements OnInit {
     this.localStorageService.updateLocalStorage(this.users);   
   }
 
-  public edit(){
-    /*//Atualizar array de usuários
-    let index: number = this.users.indexOf(user);
-    this.users[index] = user;
-    this.localStorageService.updateLocalStorage(this.users);*/
-    console.log("edit");
-    this.router.navigate(['/form']);
-  }
+  public edit(){}
 
 }

@@ -1,6 +1,7 @@
 import { Inject, Injectable, Input } from '@angular/core';
 import { LOCAL_STORAGE, StorageService, SESSION_STORAGE, StorageTranscoders } from 'ngx-webstorage-service';
 import { User } from './list/user/User';
+import { map } from 'rxjs/operators';
 
 //Chave para acessar os dados no local storage
 const STORAGE_KEY = 'local_userlist';
@@ -29,7 +30,7 @@ export class LocalStorageService{
                 email: user.email,
                 phone: user.phone,
                 website: user.website
-            })    
+            })
         });
         
         this.storage.set(STORAGE_KEY, users);

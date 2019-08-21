@@ -17,6 +17,10 @@ const APP_ROUTES: Routes = [
     {
         path: 'form',
         component: FormComponent
+    },
+    {
+        path: 'form/:user',
+        component: FormComponent
     }
 ];
 
