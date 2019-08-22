@@ -31,7 +31,6 @@
 }
 
 .btn-user-confirm{
-    border: 1px solid red;
     width: 100%;
     margin: 1% 1%;
     padding: .25em 1.5em;
@@ -42,4 +41,8 @@
     font-size: 1em;
     color: white;
     background-color: #00ff99;    
+}
+
+.btn-user-confirm:disabled{
+    background-color: #d9d9d9;   
 }
