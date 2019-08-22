@@ -1,10 +1,8 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { User } from '../user/User';
+import { User } from '../../users/user/User';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
-import { UserService } from '../user/user.service';
 import { LocalStorageService } from 'src/app/local-storage.service';
 import { Router } from '@angular/router';
-import { routing } from 'src/app/app.routing';
 
 @Component({
   selector: 'app-table',
@@ -17,9 +15,11 @@ export class TableComponent implements OnInit {
   
   STORAGE_KEY = 'local_userlist';
   
-  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, 
+  constructor(@Inject(LOCAL_STORAGE)
+    private storage: StorageService, 
     private localStorageService: LocalStorageService,
-    private router: Router) {}
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.users = this.localStorageService.getAPI();

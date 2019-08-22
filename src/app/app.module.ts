@@ -9,6 +9,7 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { ListModule } from './list/list.module';
 import { routing } from './app.routing';
 import { LocalStorageService } from './local-storage.service';
+import { UserModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { LocalStorageService } from './local-storage.service';
     AppRoutingModule,
     HttpClientModule,
     StorageServiceModule,
-    ListModule,
+    UserModule,
     routing
   ],
   providers: [LocalStorageService],
