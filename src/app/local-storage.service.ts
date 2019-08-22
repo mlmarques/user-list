@@ -48,4 +48,9 @@ export class LocalStorageService{
         //Adiciona o array atualizado
         this.uploadAPI(users);
     }
+
+    public getLastId(){
+        let users: User[] = this.getAPI();
+        return users[users.length - 1].id;
+    }
 }
