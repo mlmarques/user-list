@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, Output, EventEmitter } from '@angular/core';
 import { User } from '../../users/user/User';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { LocalStorageService } from 'src/app/local-storage.service';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class TableComponent implements OnInit {
 
-  @Input() users: User[] = []
+  @Input() users: User[] = [];
   
   STORAGE_KEY = 'local_userlist';
   

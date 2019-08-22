@@ -5,26 +5,31 @@
         <input type="text" class="user-input" id="name" 
             required
             [(ngModel)]="name" name="name"
+            placeholder="Sistely Nazareth"
          />
         <label class="user-label" for="username">Nome de usuário</label>
         <input type="text" class="user-input" id="username"
             required
             [(ngModel)]="username" name="username" 
+            placeholder="snazareth"
         />
         <label class="user-label" for="email">E-mail</label>
         <input type="text" class="user-input" id="email"
             required
             [(ngModel)]="email" name="email" 
+            placeholder="snazareth@gmail.com"
         />
         <label class="user-label" for="phone">Telefone</label>
         <input type="text" class="user-input" id="phone"
             required
             [(ngModel)]="phone" name="phone" 
+            placeholder="998765-4321"
         />
         <label class="user-label" for="website">Site</label>
         <input type="text" class="user-input" id="website"
             required
-            [(ngModel)]="website" name="website" 
+            [(ngModel)]="website" name="website"
+            placeholder="snazareth.com.br" 
         />
         <button type="submit" class="btn-user-confirm" [disabled]="!userForm.form.valid">Confirmar</button>
     </form>

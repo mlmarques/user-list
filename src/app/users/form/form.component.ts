@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../user/User';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { LocalStorageService } from 'src/app/local-storage.service';

@@ -13,9 +13,7 @@ export class UserComponent implements OnInit {
   users: User[] = [];
   
   constructor(userService: UserService, private localStorageService: LocalStorageService) {
-    //Verifica se há dados na local storage
     if(!this.localStorageService.getAPI()){
-      //Se não, carrega a API com os dados do usuário
       userService
         .listUsers()
         .subscribe(users => {

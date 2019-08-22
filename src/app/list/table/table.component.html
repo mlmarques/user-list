@@ -9,7 +9,6 @@
             <th class="table-header">Site</th>
             <th class="table-header"></th>
             <th class="table-header"></th>
-            <th class="table-header"></th>
         </tr>
     </thead>
     <tbody>
@@ -18,10 +17,10 @@
             <td class="table-data">{{user.username}}</td>
             <td class="table-data">{{user.email}}</td>
             <td class="table-data">{{user.phone}}</td>
-            <td class="table-data">{{user.website}}</td>
-            <td><button class="button btn-details">Detalhes</button></td>  
+            <td class="table-data">{{user.website}}</td> 
             <td><button type="submit" (click)="edit()" [routerLink]="['/form', user]" class="button btn-edit">Editar</button></td>  
             <td><button (click)="delete(user)" class="button btn-delete">Excluir</button></td>          
         </tr>
     </tbody>
+    <tfoot>
 </table>
