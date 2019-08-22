@@ -3,7 +3,6 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { User } from '../user/User';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { LocalStorageService } from 'src/app/local-storage.service';
-import { skip } from 'rxjs/operators';
 
 @Component({
   selector: 'app-form',
@@ -33,22 +32,21 @@ export class FormComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    // REFATORAR ESSE CÓDIGO
-    // ----------------------------------------------------------
-    //Buscar o id passado como parâmetro na url
-    var usuario = this.route.snapshot.params;
-    // console.log(usuario);
+    this.getUserData();
+  }
+
+  private getUserData() {
     this.id = +this.route.snapshot.paramMap.get("id");
     this.name = this.route.snapshot.paramMap.get("name");
     this.username = this.route.snapshot.paramMap.get("username");
     this.email = this.route.snapshot.paramMap.get("email");
     this.phone = this.route.snapshot.paramMap.get("phone");
     this.website = this.route.snapshot.paramMap.get("website");
-    // ----------------------------------------------------------
   }
 
   public onSubmit(){
     this.saveUser();
+    this.router.navigate(['']);
   }
   
   public saveUser(){
