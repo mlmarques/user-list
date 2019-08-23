@@ -31,6 +31,30 @@
     text-align: left;
 }
 
+.btn-clear{
+    width: 15%;
+    margin: 0 .5% 1% .5%;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: .75em;
+    color: white;    
+    background-color: gray;
+}
+
+.btn-load{
+    width: 15%;
+    margin: 0 .5% 1% .5%;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: .75em;
+    color: white;    
+    background-color: #42A948;
+}
+
 .button{
     padding: .25em 1.5em;
     border-radius: 2px;

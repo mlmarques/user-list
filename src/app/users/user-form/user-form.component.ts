@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
 import { User } from '../common/models/User';
 import { LocalStorageService } from 'src/app/common/services/local-storage.service';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-form',
@@ -22,8 +23,8 @@ export class UserFormComponent implements OnInit {
   username: string;
   email: string;
   phone: string;
-  website: string;
-  
+  website: string;  
+
   constructor(
     @Inject(LOCAL_STORAGE) 
     private storage: StorageService,

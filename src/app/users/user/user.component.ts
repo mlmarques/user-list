@@ -25,4 +25,14 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  clearAPI(){
+    console.log("Clear API");
+    this.localStorageService.clearStorage();
+  }
+
+  loadAPI(){
+    console.log("Load API");
+    this.users = this.localStorageService.getAPI();
+  }
 }

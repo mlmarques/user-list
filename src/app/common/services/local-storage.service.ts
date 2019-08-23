@@ -38,4 +38,8 @@ export class LocalStorageService{
         this.storage.clear();
         this.uploadAPI(users);
     }
+
+    public clearStorage(){
+        this.storage.clear();
+    }
 }

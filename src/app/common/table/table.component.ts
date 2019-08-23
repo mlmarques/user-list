@@ -11,11 +11,14 @@ import { LocalStorageService } from 'src/app/common/services/local-storage.servi
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-
-  @Input() users: User[] = [];
   
   STORAGE_KEY = 'local_userlist';
-  
+
+  @Input() users: User[] = [];
+
+  @Output() clearStorage = new EventEmitter();
+  @Output() loadStorage = new EventEmitter();
+
   constructor(@Inject(LOCAL_STORAGE)
     private storage: StorageService, 
     private localStorageService: LocalStorageService,
@@ -24,6 +27,14 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.localStorageService.getAPI();
+  }
+
+  clear(){
+    this.clearStorage.emit(event);
+  }
+
+  load(){
+    this.loadStorage.emit(event);
   }
 
   public delete(user: User){
