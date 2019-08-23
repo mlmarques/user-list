@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Inject, Output, EventEmitter } from '@angular/core';
-import { User } from '../../users/user/User';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
-import { LocalStorageService } from 'src/app/local-storage.service';
 import { Router } from '@angular/router';
+
+import { User } from '../../users/common/models/User';
+import { LocalStorageService } from 'src/app/common/services/local-storage.service';
 
 @Component({
   selector: 'app-table',
@@ -26,11 +27,8 @@ export class TableComponent implements OnInit {
   }
 
   public delete(user: User){
-    //Pega o index do usuário a ser deletado
     let index: number = this.users.indexOf(user);
-    //Remove esse usuário do array de usuários do componente
     this.users.splice(index, 1);
-    //Passa o array atualizado para o método do LocalStorageService
     this.localStorageService.updateLocalStorage(this.users);   
   }
 

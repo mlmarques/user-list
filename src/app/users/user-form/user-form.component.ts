@@ -1,15 +1,16 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from '../user/User';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
-import { LocalStorageService } from 'src/app/local-storage.service';
+
+import { User } from '../common/models/User';
+import { LocalStorageService } from 'src/app/common/services/local-storage.service';
 
 @Component({
   selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.css']
 })
-export class FormComponent implements OnInit {
+export class UserFormComponent implements OnInit {
   
   STORAGE_KEY = 'local_userlist';
 

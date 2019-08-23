@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
-import { User } from './users/user/User';
+
+import { User } from '../../users/common/models/User';
 
 const STORAGE_KEY = 'local_userlist';
 

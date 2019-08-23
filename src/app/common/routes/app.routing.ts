@@ -1,8 +1,9 @@
 import { Routes, RouterModule} from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { TableComponent } from './list/table/table.component';
-import { FormComponent } from './users/form/form.component';
-import { UserComponent } from './users/user/user.component';
+
+import { TableComponent } from '../table/table.component';
+import { UserFormComponent } from '../../users/user-form/user-form.component';
+import { UserComponent } from '../../users/user/user.component';
 
 const APP_ROUTES: Routes = [
     {
@@ -15,11 +16,11 @@ const APP_ROUTES: Routes = [
     },
     {
         path: 'form',
-        component: FormComponent
+        component: UserFormComponent
     },
     {
         path: 'form/:user',
-        component: FormComponent
+        component: UserFormComponent
     }
 ];
 

@@ -1,18 +1,28 @@
 import { NgModule } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { routing } from '../app.routing';
+
+import { HeaderComponent } from './header/header.component';
+import { routing } from './routes/app.routing';
+import { TableComponent } from './table/table.component';
+import { FormsModule } from '@angular/forms';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
     declarations: [
-        HeaderComponent
+        HeaderComponent,
+        TableComponent
     ],
     exports: [
-        HeaderComponent
+        HeaderComponent,
+        TableComponent,
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         routing
+    ],
+    providers: [
+        LocalStorageService
     ]
 })
 export class CommonModule{}

@@ -3,10 +3,10 @@ export interface User{
     name: string;
     username: string;
     email: string;
-    //address: Address;
+    address?: Address;
     phone: String;
     website: string;
-    //company: Company;
+    company?: Company;
 }
 
 export interface Address{

@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { UserComponent } from './user/user.component';
-import { UserService } from './user/user.service';
+import { UserService } from './common/services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { routing } from '../app.routing';
-import { FormComponent } from './form/form.component';
-import { TableComponent } from '../list/table/table.component';
-import { ListModule } from '../list/list.module';
+import { routing } from '../common/routes/app.routing';
+import { UserFormComponent } from './user-form/user-form.component';
+import { CommonModule } from '../common/common.module';
 
 @NgModule({
     declarations: [
         UserComponent,
-        FormComponent
+        UserFormComponent
     ],
     exports: [
         UserComponent,
-        FormComponent
+        UserFormComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        ListModule,
-        routing
+        CommonModule
     ],
     providers: [
         UserService

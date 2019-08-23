@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './User';
-import { UserService } from './user.service';
-import { LocalStorageService } from 'src/app/local-storage.service';
+
+import { User } from '../common/models/User';
+import { UserService } from '../common/services/user.service';
+import { LocalStorageService } from 'src/app/common/services/local-storage.service';
 
 @Component({
   selector: 'app-user',
